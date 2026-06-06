@@ -57,9 +57,9 @@ Instructions:
 6. Write comments in the code explaining your logic.
 7. CRITICAL: You MUST strictly use the exact column names as defined in the Workbook Profile Headers. Do NOT guess or hallucinate column names.
 8. When grouping/sorting by month names (e.g. 'Month Name'), ALWAYS sort them chronologically (January to December), not alphabetically. Convert the month column to a pandas Categorical type with a chronological month list to sort it:
-   month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-   df_agg['Month Name'] = pd.Categorical(df_agg['Month Name'], categories=month_order, ordered=True)
-   df_agg = df_agg.sort_values('Month Name')
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+df_agg['Month Name'] = pd.Categorical(df_agg['Month Name'], categories=month_order, ordered=True)
+df_agg = df_agg.sort_values('Month Name')
 9. When creating a bar chart, ALWAYS color the bars by the category column to make it colorful and easily distinguishable (e.g., pass `color='Month Name'` or your category column to `px.bar`).
 
 Return ONLY valid python code inside a ```python ``` block.
@@ -114,8 +114,8 @@ Coding Rules:
 4. CRITICAL: Strictly use the exact column names from the Workbook Profile. Do NOT guess or hallucinate column names.
 5. For visualizations, ALWAYS use Plotly (e.g., `fig = px...`). Do NOT use pandas `.plot()` or matplotlib. If plotting aggregated metrics (like sales per month/country), group and aggregate the data first (e.g., `df_agg = df.groupby(...)['Col'].sum().reset_index()`) before plotting.
 6. When grouping/sorting by month names (e.g. 'Month Name'), ALWAYS sort them chronologically (January to December), not alphabetically. Convert the month column to a pandas Categorical type with a chronological month list to sort it:
-   month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-   df_agg['Month Name'] = pd.Categorical(df_agg['Month Name'], categories=month_order, ordered=True)
-   df_agg = df_agg.sort_values('Month Name')
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+df_agg['Month Name'] = pd.Categorical(df_agg['Month Name'], categories=month_order, ordered=True)
+df_agg = df_agg.sort_values('Month Name')
 7. When creating a bar chart, ALWAYS color the bars by the category column to make it colorful and easily distinguishable (e.g., pass `color='Month Name'` or your category column to `px.bar`).
 """
