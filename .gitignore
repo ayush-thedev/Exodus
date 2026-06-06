@@ -32,3 +32,4 @@ localexclude
 # Migration notes and local documents
 migration_notes/
 /*.md
+!/README.md
